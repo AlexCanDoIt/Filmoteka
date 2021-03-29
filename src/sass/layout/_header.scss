@@ -1,28 +1,16 @@
 /* ========== Header ========== */
 
-.link {
-  text-decoration: none;
-}
-
-.list {
-  list-style: none;
-}
-
-.eemsg-hide {
-  visibility: hidden;
-}
-
-.main-header {
+.header {
   padding-top: 46px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 44px;
 
-  &-container {
+  &__container {
     display: block;
   }
 
-  &-nav {
+  &__nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,7 +18,41 @@
     margin-bottom: 40px;
   }
 
-  &-search {
+  &__navlist {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.167em;
+
+    &-elem:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    &-elemlink {
+      display: flex;
+      flex-direction: column;
+      color: $main-header-text-color;
+
+      .home &:after {
+        content: '';
+        width: 100%;
+        background-color: $main-header-underline-color;
+        height: 3px;
+      }
+    }
+  }
+
+  &__search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+  }
+
+  &__search-input {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.167em;
@@ -52,15 +74,19 @@
     }
   }
 
-  &-errmsg {
+  &__errmsg {
     color: $main-header-errmsg-color;
     font-size: 14px;
     line-height: 1.167em;
     margin-top: 22px;
     margin-bottom: 0;
+
+    &-hide {
+      visibility: hidden;
+    }
   }
 
-  &-searchsvg-icon {
+  &__search-svg {
     position: absolute;
     width: 12px;
     height: 12px;
@@ -70,44 +96,10 @@
   }
 }
 
-.header-navlist {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.167em;
-
-  &-elem:not(:last-child) {
-    margin-right: 40px;
-  }
-}
-
-.navlist-elem-link {
-  display: flex;
-  flex-direction: column;
-  color: $main-header-text-color;
-
-  .home &:after {
-    content: '';
-    width: 100%;
-    background-color: $main-header-underline-color;
-    height: 3px;
-  }
-}
-
-.search-form {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  position: relative;
-}
-
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
   screen and (min-resolution: 192dpi) and (max-width: 767px),
   screen and (min-resolution: 2dppx) and (max-width: 767px) {
-  .main-header {
+  .header {
     background-image: linear-gradient(
         $main-header-background-overlay-color,
         $main-header-background-overlay-color
@@ -117,7 +109,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .main-header {
+  .header {
     background-image: linear-gradient(
         $main-header-background-overlay-color,
         $main-header-background-overlay-color
@@ -129,7 +121,7 @@
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
   screen and (min-resolution: 192dpi) and (min-width: 768px),
   screen and (min-resolution: 2dppx) and (min-width: 768px) {
-  .main-header {
+  .header {
     background-image: linear-gradient(
         $main-header-background-overlay-color,
         $main-header-background-overlay-color
@@ -139,7 +131,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .main-header {
+  .header {
     background-image: linear-gradient(
         $main-header-background-overlay-color,
         $main-header-background-overlay-color
@@ -149,29 +141,29 @@
 }
 
 @media screen and (min-width: 768px) {
-  .main-header {
+  .header {
     padding-bottom: 52px;
 
-    &-search,
-    &-search-for-tabdesc {
+    &__search-input,
+    &__search-spansizer {
       width: 336px;
       position: relative;
     }
 
-    &-searchsvg-icon {
+    &__search-svg {
       transform: translateY(-160%);
     }
-  }
 
-  .search-form {
-    align-items: center;
+    &__search-form {
+      align-items: center;
+    }
   }
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
   screen and (min-resolution: 192dpi) and (min-width: 1024px),
   screen and (min-resolution: 2dppx) and (min-width: 1024px) {
-  .main-header {
+  .header {
     background-image: linear-gradient(
         $main-header-background-overlay-color,
         $main-header-background-overlay-color
@@ -181,7 +173,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .main-header {
+  .header {
     background-image: linear-gradient(
         $main-header-background-overlay-color,
         $main-header-background-overlay-color
