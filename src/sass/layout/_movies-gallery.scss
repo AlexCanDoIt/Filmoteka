@@ -2,9 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 
   @media screen and (min-width: 768px) {
     justify-content: flex-start;
+    flex-direction: row;
+
+    margin-left: -15px;
+    margin-right: -15px;
   }
 }
 
@@ -14,6 +19,8 @@
 
   @media screen and (min-width: 768px) {
     width: calc((100% - 4 * 15px) / 2);
+
+    margin-top: 30px;
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -30,7 +37,7 @@
   border-radius: 5px;
 
     // временно, под удаление.
-    background-color: teal;
+    background-color: $orange;
     // ----------------------
 }
 
@@ -50,5 +57,17 @@
 
 .card__description {
   font: inherit;
-  color: #FF6B08;
+  color: $orange;
+}
+
+.card__rating{
+  display: inline-block;
+  text-align: center;
+  width: 36px;
+  margin-left: 10px;
+  
+  border-radius: 5px;
+  background-color: $orange;
+  font: inherit;
+  color: $white;
 }
