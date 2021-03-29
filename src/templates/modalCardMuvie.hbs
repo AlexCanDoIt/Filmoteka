@@ -1,0 +1,30 @@
+{{#each this}}
+<div class="modal-movie-card">
+    <div class="modal-movie-poster">
+        <img src="{{ ... }}" alt="poster movie" />
+    </div>
+    <div class="modal-movie-data">
+        <h2 class="modal-movie-title">{{ title }}</h2>
+        <div class="modal-stats">
+            <p class="modal-stats-item">Vote / Votes
+                <span class="modal-stats-material vote">{{ vote_average }}</span> / 
+                <span class="modal-stats-material">{{ vote_count }}</span>
+            </p>
+            <p class="modal-stats-item">Popularity
+                <span class="modal-stats-material">{{ popularity }}</span> 
+            </p>
+            <p class="modal-stats-item">Original Title
+                <span class="modal-stats-material">{{ original_title }}</span>
+            </p>
+            <ul class="modal-stats-item">Genre
+                {{#each this.genres}}
+                <li class="modal-stats-material">{{ name }}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <p class="modal-about">About</p>
+        <p class="modal-movie-description">{{ tagline }}</p>
+        <button class="modal-button" type="button">ADD TO WATCHED</button>
+        <button class="modal-button" type="button">ADD TO QUEUE</button>  
+    </div>
+{{/each}}
