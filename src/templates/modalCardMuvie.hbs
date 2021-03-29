@@ -1,31 +1,35 @@
 {{#each this}}
-<div class="modal-movie-card">
-    <div class="modal-movie-card_picture">
-        <img src="{{url}}" alt="movie poster" class="modal-movie_poster" />
+<div class="modal-form">
+
+    <div class="poster">
+        <img src="{{url}}" alt="movie poster" class="poster__image" />
     </div>
-    <div class="modal-movie-data">
-        <h2 class="modal-movie-card_title">{{title}}</h2>
-        <div class="modal-stats">
-            <p class="modal-stats_item">Vote / Votes
-                <span class="modal-stats-material_rating">{{rating}}</span> / 
-                <span class="modal-stats-material">{{voteCount}}</span>
+
+    <div class="modal-form__meta">
+        <h2 class="modal-form__title">{{title}}</h2>
+
+        <div class="stats">
+            <p class="stats__item">Vote / Votes
+                <span class="stats__material stats__material--rating">{{rating}}</span> / 
+                <span class="stats__material">{{voteCount}}</span>
             </p>
-            <p class="modal-stats_item">Popularity
-                <span class="modal-stats-material">{{popularity}}</span> 
+            <p class="stats__item">Popularity
+                <span class="stats__material">{{popularity}}</span> 
             </p>
-            <p class="modal-stats_item">Original Title
-                <span class="modal-stats-material">{{originalTitle }}</span>
+            <p class="stats__item">Original Title
+                <span class="stats__material">{{originalTitle }}</span>
             </p>
-            <ul class="modal-stats_item">Genre
+            <ul class="stats__item">Genre
                 {{#each this.genres}}
-                <li class="modal-stats-material">{{name}}</li>
+                <li class="stats__material">{{name}}</li>
                 {{/each}}
             </ul>
         </div>
-        <p class="modal-about">About</p>
-        <p class="modal-movie-card_description">{{description}}</p>
-        <button class="modal-button" type="button">ADD TO WATCHED</button>
-        <button class="modal-button" type="button">ADD TO QUEUE</button>  
+
+        <p class="modal-form__about">About</p>
+        <p class="modal-form__description">{{description}}</p>
+        <button class="modal-form__button" type="button">ADD TO WATCHED</button>
+        <button class="modal-form__button" type="button">ADD TO QUEUE</button>  
     </div>
 </div>
 {{/each}}
