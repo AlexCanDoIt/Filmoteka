@@ -1,30 +1,31 @@
 {{#each this}}
 <div class="modal-movie-card">
-    <div class="modal-movie-poster">
-        <img src="{{ ... }}" alt="poster movie" />
+    <div class="modal-movie-card_picture">
+        <img src="{{url}}" alt="movie poster" class="modal-movie_poster" />
     </div>
     <div class="modal-movie-data">
-        <h2 class="modal-movie-title">{{ title }}</h2>
+        <h2 class="modal-movie-card_title">{{title}}</h2>
         <div class="modal-stats">
-            <p class="modal-stats-item">Vote / Votes
-                <span class="modal-stats-material vote">{{ vote_average }}</span> / 
-                <span class="modal-stats-material">{{ vote_count }}</span>
+            <p class="modal-stats_item">Vote / Votes
+                <span class="modal-stats-material_rating">{{rating}}</span> / 
+                <span class="modal-stats-material">{{voteCount}}</span>
             </p>
-            <p class="modal-stats-item">Popularity
-                <span class="modal-stats-material">{{ popularity }}</span> 
+            <p class="modal-stats_item">Popularity
+                <span class="modal-stats-material">{{popularity}}</span> 
             </p>
-            <p class="modal-stats-item">Original Title
-                <span class="modal-stats-material">{{ original_title }}</span>
+            <p class="modal-stats_item">Original Title
+                <span class="modal-stats-material">{{originalTitle }}</span>
             </p>
-            <ul class="modal-stats-item">Genre
+            <ul class="modal-stats_item">Genre
                 {{#each this.genres}}
-                <li class="modal-stats-material">{{ name }}</li>
+                <li class="modal-stats-material">{{name}}</li>
                 {{/each}}
             </ul>
         </div>
         <p class="modal-about">About</p>
-        <p class="modal-movie-description">{{ tagline }}</p>
+        <p class="modal-movie-card_description">{{description}}</p>
         <button class="modal-button" type="button">ADD TO WATCHED</button>
         <button class="modal-button" type="button">ADD TO QUEUE</button>  
     </div>
+</div>
 {{/each}}
