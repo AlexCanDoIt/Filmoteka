@@ -1,8 +1,11 @@
-//util styles
 @import './utils/variables';
 @import './base/common';
 @import './utils/visually-hidden';
+@import './base/section';
+@import './base/container';
 
 @import './layout/header';
 @import './components/logo';
+@import './components/page-switcher';
+@import './layout/movies-gallery';
 @import './layout/footer';
