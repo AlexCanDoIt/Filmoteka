@@ -1,4 +1,13 @@
 /* ========== Common ========== */
+
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+
 body {
   box-sizing: border-box;
 
@@ -29,4 +38,5 @@ a {
   max-width: 100%;
   height: auto;
 }
+
 /* ========== End Common ========== */
