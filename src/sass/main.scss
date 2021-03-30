@@ -1,22 +1,13 @@
-/*
- * Главный файл стилей.
- * Все паршалы подключаются сюда.
- */
-
-// Стили для файла с примером HTML-фрагмента
-// @import './example';
-
-//util styles
-
 @import './utils/variables';
-
-//base elements
-
 @import './base/common';
+@import './utils/visually-hidden';
+@import './base/section';
+@import './base/container';
 
-//components
-
+@import './layout/header';
+@import './layout/mylib-header';
 @import './components/logo';
 @import './components/button';
-
-@import './layout/mylib-header';
+@import './components/page-switcher';
+@import './layout/movies-gallery';
+@import './layout/footer';
