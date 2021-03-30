@@ -1,0 +1,38 @@
+{{#each this}}
+<div class="modal">
+
+    <div class="modal__img">
+        <img src="{{url}}" alt="movie poster" class="img" />
+    </div>
+
+    <div class="modal__content-container">
+        <h2 class="modal__title">{{title}}</h2>
+
+        <div class="modal__thumb">
+            <p class="modal__subtitle">Vote / Votes
+                <span class="modal__number modal__number--white-orange">{{rating}}</span> / 
+                <span class="modal__number modal__number--black-gray">{{voteCount}}</span>
+            </p>
+            <p class="modal__subtitle">Popularity
+                <span class="modal__number">{{popularity}}</span> 
+            </p>
+            <p class="modal__subtitle">Original Title
+                <span class="modal__text">{{originalTitle }}</span>
+            </p>
+            <ul class="modal__subtitle">Genre
+                {{#each this.genres}}
+                <li class="modal__text">{{name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <h3 class="modal__description-title">About</h3>
+        <p class="modal__description-text">{{description}}</p>
+
+        <div class="modal__button-container">
+            <button class="button modal__button" type="button">ADD TO WATCHED</button>
+            <button class="button modal__button" type="button">ADD TO QUEUE</button>  
+        </div>
+    </div>
+</div>
+{{/each}}
