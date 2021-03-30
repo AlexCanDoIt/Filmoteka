@@ -5,3 +5,18 @@
 
 // Стили для файла с примером HTML-фрагмента
 // @import './example';
+
+//util styles
+
+@import './utils/variables';
+
+//base elements
+
+@import './base/common';
+
+//components
+
+@import './components/logo';
+@import './components/button';
+
+@import './layout/mylib-header';
