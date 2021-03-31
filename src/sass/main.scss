@@ -7,8 +7,16 @@
 
 @import "./components/logo";
 @import "./components/button";
+// @import "./components/title";
+// @import "./components/backdrop";
+// @import "./components/modal";
+// @import "./components/form";
+@import './components/page-switcher'; // !!!!!!!!!!!!!!!
 
 @import "./layout/header";
+@import './layout/movies-gallery';
+@import "./layout/footer";
+
 
 // ==========
 // @import './utils/variables';
