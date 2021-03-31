@@ -1,3 +1,30 @@
 /* ========== Variables ========== */
-
+$main-font: Roboto, sans-serif;
+$title-white-theme-color: #000000;
+$title-dark-theme-color: #ffffff;
+$subtitle-color: #8C8C8C;
+$text-white-theme-color: #000000;
+$text-dark-theme-color: #ffffff;
+$accent-color: #FF6B01;
+$error-color: #FF001B;
+$transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 /* ========== End Variables ========== */
+
+// $main-header-text-color: #fff;
+// $main-header-underline-color: #ff6b08;
+// $main-header-bottom-underline-color: #fff;
+// $main-header-errmsg-color: #ff001b;
+// $main-header-background-overlay-color: rgba(0, 0, 0, 0.56);
+
+// $main-font: Roboto, sans-serif;
+// $title: #000000; /* description of films and name film*/
+// $secondary-title: #FF6B08; /*колір тексту жанру фільму і року випуску */
+// $text: #FFFFFF; /*колір тексту в header & orange button*/
+// $secondary-text: #545454; /* колір тексту в footer */
+// $modal-list: #8C8C8C;
+// $bcg-header: rgba(0, 0, 0, 0.56);
+// $bcg-home: #E5E5E5;
+// $bcg-footer: #F7F7F7;
+// $search-error: #FF001B;
+// $button-color: #FF6B01;
+// $backdrop: #818181
