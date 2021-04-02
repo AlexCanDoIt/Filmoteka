@@ -7,28 +7,11 @@
 
 @import "./components/logo";
 @import "./components/button";
-// @import "./components/title";
 // @import "./components/backdrop";
 // @import "./components/modal";
-// @import "./components/form";
-// @import './components/page-switcher'; // !!!!!!!!!!!!!!!
-
-// @import "./layout/header";
-// @import './layout/gallery';
-@import "./layout/footer";
-
-
-// ==========
-// @import './utils/variables';
-// @import './base/common';
-// @import './utils/visually-hidden';
-// @import './base/section';
-// @import './base/container';
-
-// @import './layout/header';
-// @import './layout/mylib-header';
-// @import './components/logo';
-// @import './components/button';
 // @import './components/page-switcher';
-// @import './layout/movies-gallery';
-// @import './layout/footer';
+
+@import "./layout/header";
+@import "./layout/header-lib";
+@import './layout/gallery';
+@import "./layout/footer";

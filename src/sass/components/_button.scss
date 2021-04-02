@@ -1,6 +1,6 @@
 /* ========== Button ========== */
 .button {
-  width: 130px;
+  width: 112px;
   height: 44px;
   border: 1px solid;
   border-color: #ffffff;
@@ -12,12 +12,11 @@
   text-transform: uppercase;
   color: $text-dark-theme-color;
   cursor: pointer;
-  transition: border-color $transition, box-shadow $transition, background-color $transition;
+  transition: border-color $transition, background-color $transition;
 
   &:hover,
   &:focus {
     border-color: $accent-color;
-    box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
     background-color: $accent-color;
   }
 }
