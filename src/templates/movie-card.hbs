@@ -1,28 +1,14 @@
-{{#each this}}
+{{#each results}}
 <li class="movies__card">
   <div class="movies__thumb">
-    <img class="movies__img" src={{poster_path}} alt={{original_title}}>
+    <img class="img movies__img" src={{poster_path}} alt={{original_title}}>
   </div>
   <div class="movies__content">
     <h2 class="movies__title">{{original_title}}</h2>
     <p class="movies__description">
-      {{overview}} | {{release_date}}
-      <span class="movies__rating">{{rating}}</span>
+      {{genre}} | {{release_date}}
+      <span class="movies__rating">{{popularity}}</span>
     </p>
   </div>
 </li>
 {{/each}}
-
-{{!-- {{#each this}}
-<li class="card">
-  <div class="card__thumb">
-    <img src={{poster_path}} alt={{original_title}} class="card__image">
-  </div>
-  <div class="card__content">
-    <h2 class="card__title">{{original_title}}</h2>
-    <p class="card__description">
-      {{overview}} | {{release_date}}
-    </p>
-  </div>
-</li>
-{{/each}} --}}
