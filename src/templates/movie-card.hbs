@@ -1,13 +1,13 @@
 {{#each this}}
-<li class="movie-card">
-  <div class="movie-card__thumb">
-    <img class="movie-card__img" src={{poster_path}} alt={{original_title}}>
+<li class="movies__card">
+  <div class="movies__thumb">
+    <img class="movies__img" src={{poster_path}} alt={{original_title}}>
   </div>
-  <div class="movie-card__content">
-    <h2 class="movie-card__title">{{original_title}}</h2>
-    <p class="movie-card__description">
+  <div class="movies__content">
+    <h2 class="movies__title">{{original_title}}</h2>
+    <p class="movies__description">
       {{overview}} | {{release_date}}
-      <span class="movie-card__rating">{{rating}}</span>
+      <span class="movies__rating">{{rating}}</span>
     </p>
   </div>
 </li>
