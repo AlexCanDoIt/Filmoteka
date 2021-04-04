@@ -1,5 +1,14 @@
 import './sass/main.scss';
 
+
+import listPop from './pop'
+
+listPop()
+
+
+
+
+
 // import movieCardTpl from './templates/movie-card.hbs';
 // const refs = {
 //   cardContainer: document.querySelector('.gallery__list'),
