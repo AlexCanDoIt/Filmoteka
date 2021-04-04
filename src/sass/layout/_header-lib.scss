@@ -1,7 +1,6 @@
-/* ========== mylib-header ========== */
-
+/* ========== Header Library ========== */
 .header {
-  & .container {
+  &__container {
     display: block;
     padding-top: 46px;
     padding-bottom: 66px;
@@ -69,22 +68,26 @@
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
   screen and (min-resolution: 192dpi) and (max-width: 767px),
   screen and (min-resolution: 2dppx) and (max-width: 767px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/mylibheader-bg-mobile@2x.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/mylibheader-bg-mobile@2x.jpg');
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/mylibheader-bg-mobile.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/mylibheader-bg-mobile.jpg');
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
   .header {
-    & .container {
+    &__container {
       padding-bottom: 61px;
     }
 
@@ -101,145 +104,40 @@
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
   screen and (min-resolution: 192dpi) and (min-width: 768px),
   screen and (min-resolution: 2dppx) and (min-width: 768px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/mylibheader-bg-tablet@2x.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/mylibheader-bg-tablet@2x.jpg');
+    }
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/mylibheader-bg-tablet.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/mylibheader-bg-tablet.jpg');
+    }
   }
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
   screen and (min-resolution: 192dpi) and (min-width: 1024px),
   screen and (min-resolution: 2dppx) and (min-width: 1024px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/mylibheader-bg-desktop@2x.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/mylibheader-bg-desktop@2x.jpg');
+    }
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/mylibheader-bg-desktop.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/mylibheader-bg-desktop.jpg');
+    }
   }
 }
-
-// .mylib-header {
-//   padding-top: 46px;
-//   padding-left: 20px;
-//   padding-right: 20px;
-//   padding-bottom: 66px;
-
-//   &__container {
-//     display: block;
-//   }
-
-//   &__nav {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: flex-end;
-//     margin-bottom: 40px;
-//   }
-
-//   &__nav-list {
-//     display: flex;
-//     margin: 0;
-//     padding: 0;
-//     text-transform: uppercase;
-//     font-weight: 500;
-//     font-size: 12px;
-//     line-height: 1.167em;
-//   }
-
-//   &__item:not(:last-child) {
-//     margin-right: 40px;
-//   }
-
-//   &__link {
-//     display: flex;
-//     flex-direction: column;
-//     color: $white;
-
-//     .mylib &:after {
-//       content: '';
-//       width: 100%;
-//       background-color: $orange;
-//       height: 3px;
-//     }
-//   }
-
-//   &__container-buttons {
-//     display: flex;
-//     justify-content: center;
-//   }
-
-//   &__button-watched {
-//     margin-right: 20px;
-//   }
-// }
-
-// @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
-//   screen and (min-resolution: 192dpi) and (max-width: 767px),
-//   screen and (min-resolution: 2dppx) and (max-width: 767px) {
-//   .mylib-header {
-//     background-image: linear-gradient($bcg-header, $bcg-header),
-//       url('../../src/images/mylibheader-bg-mobile@2x.jpg');
-//   }
-// }
-
-// @media screen and (max-width: 767px) {
-//   .mylib-header {
-//     background-image: linear-gradient($bcg-header, $bcg-header),
-//       url('../../src/images/mylibheader-bg-mobile.jpg');
-//   }
-// }
-
-// @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-//   screen and (min-resolution: 192dpi) and (min-width: 768px),
-//   screen and (min-resolution: 2dppx) and (min-width: 768px) {
-//   .mylib-header {
-//     background-image: linear-gradient($bcg-header, $bcg-header),
-//       url('../../src/images/mylibheader-bg-tablet@2x.jpg');
-//   }
-// }
-
-// @media screen and (min-width: 768px) and (max-width: 1023px) {
-//   .mylib-header {
-//     background-image: linear-gradient($bcg-header, $bcg-header),
-//       url('../../src/images/mylibheader-bg-tablet.jpg');
-//   }
-// }
-
-// @media screen and (min-width: 768px) {
-//   .mylib-header {
-//     padding-bottom: 66px;
-
-//     &__button-watched {
-//       margin-right: 15px;
-//     }
-//   }
-// }
-
-// @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
-//   screen and (min-resolution: 192dpi) and (min-width: 1024px),
-//   screen and (min-resolution: 2dppx) and (min-width: 1024px) {
-//   .mylib-header {
-//     background-image: linear-gradient($bcg-header, $bcg-header),
-//       url('../../src/images/mylibheader-bg-desktop@2x.jpg');
-//   }
-// }
-
-// @media screen and (min-width: 1024px) {
-//   .mylib-header {
-//     background-image: linear-gradient($bcg-header, $bcg-header),
-//       url('../../src/images/mylibheader-bg-desktop.jpg');
-//   }
-// }
-/* ========== End mylib-header ========== */
+/* ========== End Header Library ========== */

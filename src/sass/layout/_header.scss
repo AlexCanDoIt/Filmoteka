@@ -1,6 +1,6 @@
 /* ========== Header ========== */
 .header {
-  & .container {
+  &__container {
     display: block;
     padding-top: 46px;
     padding-bottom: 96px;
@@ -97,32 +97,40 @@
 @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
   screen and (min-resolution: 192dpi) and (max-width: 767px),
   screen and (min-resolution: 2dppx) and (max-width: 767px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/header-bg-mobile@2x.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/header-bg-mobile@2x.jpg');
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/header-bg-mobile.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/header-bg-mobile.jpg');
+    }
   }
 }
 
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
   screen and (min-resolution: 192dpi) and (min-width: 768px),
   screen and (min-resolution: 2dppx) and (min-width: 768px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/header-bg-tablet@2x.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/header-bg-tablet@2x.jpg');
+    }
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/header-bg-tablet.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/header-bg-tablet.jpg');
+    }
   }
 }
 
@@ -132,7 +140,7 @@
       align-items: center;
     }
 
-    & .container {
+    &__container {
       padding-bottom: 91px;
     }
   }
@@ -153,198 +161,20 @@
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
   screen and (min-resolution: 192dpi) and (min-width: 1024px),
   screen and (min-resolution: 2dppx) and (min-width: 1024px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/header-bg-desktop@2x.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/header-bg-desktop@2x.jpg');
+    }
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .header .container {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../../src/images/header-bg-desktop.jpg');
+  .header {
+    &__container {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../../src/images/header-bg-desktop.jpg');
+    }
   }
 }
 /* ========== End Header ========== */
-
-// .header {
-//   padding-top: 46px;
-//   padding-left: 20px;
-//   padding-right: 20px;
-//   padding-bottom: 44px;
-
-//   &__container {
-//     display: block;
-//   }
-
-//   &__nav {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: flex-end;
-//     margin-bottom: 40px;
-//   }
-
-//   &__nav-list {
-//     display: flex;
-//     margin: 0;
-//     padding: 0;
-//     text-transform: uppercase;
-//     font-weight: 500;
-//     font-size: 12px;
-//     line-height: 1.167em;
-//   }
-
-//   &__item:not(:last-child) {
-//     margin-right: 40px;
-//   }
-
-//   &__link {
-//     display: flex;
-//     flex-direction: column;
-//     color: $main-header-text-color;
-
-//     .home &:after {
-//       content: '';
-//       width: 100%;
-//       background-color: $main-header-underline-color;
-//       height: 3px;
-//     }
-//   }
-
-//   &__form {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: stretch;
-//     position: relative;
-//   }
-// }
-
-// .form {
-//   &__input {
-//     font-weight: 400;
-//     font-size: 14px;
-//     line-height: 1.167em;
-//     height: 20px;
-//     outline: none;
-//     border-top: none;
-//     border-left: none;
-//     border-right: none;
-//     border-bottom: 1px solid $main-header-bottom-underline-color;
-//     background: transparent;
-//     color: $main-header-text-color;
-//     font-size: 14px;
-//     padding-bottom: 6px;
-
-//     &::placeholder {
-//       color: $main-header-text-color;
-//       font-size: 14px;
-//       line-height: 1.167em;
-//     }
-//   }
-
-//   &__svg {
-//     position: absolute;
-//     width: 12px;
-//     height: 12px;
-//     top: 2px;
-//     right: 0;
-//     margin: 0;
-//   }
-
-//   &__text {
-//     color: $main-header-errmsg-color;
-//     font-size: 14px;
-//     line-height: 1.167em;
-//     margin-top: 22px;
-//     margin-bottom: 0;
-//   }
-// }
-
-// @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
-//   screen and (min-resolution: 192dpi) and (max-width: 767px),
-//   screen and (min-resolution: 2dppx) and (max-width: 767px) {
-//   .header {
-//     background-image: linear-gradient(
-//         $main-header-background-overlay-color,
-//         $main-header-background-overlay-color
-//       ),
-//       url('../../src/images/header-bg-mobile@2x.jpg');
-//   }
-// }
-
-// @media screen and (max-width: 767px) {
-//   .header {
-//     background-image: linear-gradient(
-//         $main-header-background-overlay-color,
-//         $main-header-background-overlay-color
-//       ),
-//       url('../../src/images/header-bg-mobile.jpg');
-//   }
-// }
-
-// @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
-//   screen and (min-resolution: 192dpi) and (min-width: 768px),
-//   screen and (min-resolution: 2dppx) and (min-width: 768px) {
-//   .header {
-//     background-image: linear-gradient(
-//         $main-header-background-overlay-color,
-//         $main-header-background-overlay-color
-//       ),
-//       url('../../src/images/header-bg-tablet@2x.jpg');
-//   }
-// }
-
-// @media screen and (min-width: 768px) and (max-width: 1023px) {
-//   .header {
-//     background-image: linear-gradient(
-//         $main-header-background-overlay-color,
-//         $main-header-background-overlay-color
-//       ),
-//       url('../../src/images/header-bg-tablet.jpg');
-//   }
-// }
-
-// @media screen and (min-width: 768px) {
-//   .header {
-//     padding-bottom: 52px;
-
-//     &__form {
-//       align-items: center;
-//     }
-//   }
-
-//   .form {
-//     &__input,
-//     &__svg-container {
-//       width: 336px;
-//       position: relative;
-//     }
-
-//     &__svg {
-//       transform: translateY(-160%);
-//     }
-//   }
-// }
-
-// @media screen and (min-device-pixel-ratio: 2) and (min-width: 1024px),
-//   screen and (min-resolution: 192dpi) and (min-width: 1024px),
-//   screen and (min-resolution: 2dppx) and (min-width: 1024px) {
-//   .header {
-//     background-image: linear-gradient(
-//         $main-header-background-overlay-color,
-//         $main-header-background-overlay-color
-//       ),
-//       url('../../src/images/header-bg-desktop@2x.jpg');
-//   }
-// }
-
-// @media screen and (min-width: 1024px) {
-//   .header {
-//     background-image: linear-gradient(
-//         $main-header-background-overlay-color,
-//         $main-header-background-overlay-color
-//       ),
-//       url('../../src/images/header-bg-desktop.jpg');
-//   }
-// }
