@@ -1,4 +1,4 @@
-{{#each results}}
+{{!-- {{#each results}} --}}
 <div class="backdrop">
   <div class="modal">
     <button class="modal__close-btn" type="button">
@@ -8,7 +8,8 @@
     </button>
 
     <div class="modal__img-container">
-      <img class="img modal__img" src="{{url}}" alt="{{alt}}" />
+      <img class="img modal__img" src="https://www.themoviedb.org/t/p/w220_and_h330_face{{poster_path}}" width="396"
+        alt="{{title}}" />
     </div>
 
     <div class="modal__content-container">
@@ -17,8 +18,8 @@
         <li class="modal__item">
           <h3 class="modal__subtitle">Vote / Votes</h3>
           <span class="modal__number">
-            <span class="modal__number--orange">{{rating}}</span> /
-            <span class="modal__number--gray">{{voteCount}}</span>
+            <span class="modal__number--orange">{{vote_average}}</span> /
+            <span class="modal__number--gray">{{vote_count}}</span>
           </span>
         </li>
         <li class="modal__item">
@@ -27,11 +28,11 @@
         </li>
         <li class="modal__item">
           <h3 class="modal__subtitle">Original Title</h3>
-          <span class="modal__text modal__text--uppercase">{{originalTitle}}</span>
+          <span class="modal__text modal__text--uppercase">{{original_title}}</span>
         </li>
         <li class="modal__item">
-          <h3 class="modal__subtitle">Genre</h3>
-          <span class="modal__text">{{genre}}</span>
+          <h3 class="modal__subtitle">Genre</h3{{#each genres}} <span class="modal__text">{{this.name}},&nbsp;</span>
+            {{/each}}
         </li>
       </ul>
 
@@ -45,7 +46,7 @@
     </div>
   </div>
 </div>
-{{/each}}
+{{!-- {{/each}} --}}
 
 {{!-- {{#each this}}
 <div class="backdrop">
