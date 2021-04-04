@@ -1,148 +1,84 @@
-// .card-set {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   flex-direction: column;
+.movies{
+  background-color: #E5E5E5;
+}
+​
+.movies__list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+​
+.movies__card {
+  margin-bottom: 20px;
+​
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+​
+.movies__thumb {
+  height: 398px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+​
+.movies__img {
+  object-position: top;
+  object-fit: cover;
+}
+​
+.movies__content {
+    height: 32px;
+}
+​
+.movies__title {
+  font: inherit;
+  text-transform: uppercase;
+}
+​
+.movies__description {
+  color: $accent-color;
+}
+​
+.movies__rating {
+  display: inline-block;
+  text-align: center;
+  width: 36px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: $accent-color;
+  color: $text-dark-theme-color;
+}
 
-//   @media screen and (min-width: 768px) {
-//     justify-content: flex-start;
-//     flex-direction: row;
+@media screen and (min-width: 768px) {
+  .movies__list{
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 50px;
+  }
+​
+  .movies__card{
+    width: calc((100% - 4 * 15px) / 2);
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+​
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+}
 
-//     margin-left: -15px;
-//     margin-right: -15px;
-//   }
-// }
-
-// .card {
-//   margin-top: 20px;
-//   width: 280px;
-
-//   @media screen and (min-width: 768px) {
-//     width: calc((100% - 4 * 15px) / 2);
-
-//     margin-top: 30px;
-//     margin-left: 15px;
-//     margin-right: 15px;
-//   }
-
-//   @media screen and (min-width: 1024px) {
-//     width: calc((100% - 6 * 15px) / 3);
-//   }
-// }
-
-
-// .card__thumb {
-//   height: 398px;
-
-//   border-radius: 5px;
-
-//     // временно, под удаление.
-//     background-color: $orange;
-//     // ----------------------
-// }
-
-// .card__image {
-//   object-position: top;
-// }
-
-// .card__content{
-//   height: 32px;
-//   margin-top: 10px;
-// }
-
-// .card__title {
-//   font: inherit;
-//   text-transform: uppercase;
-// }
-
-// .card__description {
-//   font: inherit;
-//   color: $orange;
-// }
-
-// .card__rating{
-//   display: inline-block;
-//   text-align: center;
-//   width: 36px;
-//   margin-left: 10px;
-  
-//   border-radius: 5px;
-//   background-color: $orange;
-//   font: inherit;
-//   color: $white;
-// }
-
-// ======================
-// .card-set {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   flex-direction: column;
-
-//   @media screen and (min-width: 768px) {
-//     justify-content: flex-start;
-//     flex-direction: row;
-
-//     margin-left: -15px;
-//     margin-right: -15px;
-//   }
-// }
-
-// .card {
-//   margin-top: 20px;
-//   width: 280px;
-
-//   @media screen and (min-width: 768px) {
-//     width: calc((100% - 4 * 15px) / 2);
-
-//     margin-top: 30px;
-//     margin-left: 15px;
-//     margin-right: 15px;
-//   }
-
-//   @media screen and (min-width: 1024px) {
-//     width: calc((100% - 6 * 15px) / 3);
-//   }
-// }
-
-
-// .card__thumb {
-//   height: 398px;
-
-//   border-radius: 5px;
-
-//     // временно, под удаление.
-//     background-color: $orange;
-//     // ----------------------
-// }
-
-// .card__image {
-//   object-position: top;
-// }
-
-// .card__content{
-//   height: 32px;
-//   margin-top: 10px;
-// }
-
-// .card__title {
-//   font: inherit;
-//   text-transform: uppercase;
-// }
-
-// .card__description {
-//   font: inherit;
-//   color: $orange;
-// }
-
-// .card__rating{
-//   display: inline-block;
-//   text-align: center;
-//   width: 36px;
-//   margin-left: 10px;
-  
-//   border-radius: 5px;
-//   background-color: $orange;
-//   font: inherit;
-//   color: $white;
-// }
+@media screen and (min-width: 1024px) {
+  .movies__card{
+    width: calc((100% - 6 * 15px) / 3);
+​
+    &:nth-last-child(-n + 3) {
+      margin-bottom: 0;
+    }
+  }
+}

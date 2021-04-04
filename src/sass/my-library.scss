@@ -1,5 +1,6 @@
 @import './utils/variables';
 @import './utils/visually-hidden';
+@import './utils/mixins';
 
 @import './base/common';
 @import './base/section';
@@ -7,9 +8,7 @@
 
 @import './components/logo';
 @import './components/button';
-// @import "./components/backdrop";
-// @import "./components/modal";
-// @import './components/page-switcher';
+@import './components/modal';
 
 @import './layout/header-lib';
 @import './layout/movies';
