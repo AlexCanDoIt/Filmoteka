@@ -1,22 +1,4 @@
 /* ========== Common ========== */
-
-.link {
-  text-decoration: none;
-}
-
-.list {
-  list-style: none;
-}
-
-body {
-  box-sizing: border-box;
-
-  font-family: $main-font;
-  font-style: normal;
-  font-size: 12px;
-  line-height: 1.4;
-}
-
 *,
 *::before,
 *::after {
@@ -25,11 +7,19 @@ body {
   box-sizing: inherit;
 }
 
-ul,ol {
+body {
+  box-sizing: border-box;
+  font-family: $main-font;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.list {
   list-style: none;
 }
 
-a {
+.link {
   text-decoration: none;
 }
 

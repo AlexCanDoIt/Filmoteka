@@ -1,17 +1,12 @@
-/* ============ Section ============ */
-.section{
-  background-color: $bcg-home;
+/* ========== Section ========== */
+.section {
+  padding: 20px 0px 40px 0;
 }
 
-.main-page{
-  display: flex;
-  justify-content: center;
-  
-  padding-bottom: 40px;
-
-  @media screen and (min-width: 768px) {
-    padding-top: 30px;
-    padding-bottom: 60px;
+@media screen and (min-width: 768px) {
+  .section {
+    padding: 60px 0px 60px 0;
   }
 }
+
 /* ========== End Section ========== */
