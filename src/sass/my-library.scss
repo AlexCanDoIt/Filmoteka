@@ -1,15 +1,15 @@
-@import "./utils/variables";
-@import "./utils/visually-hidden";
-@import "./utils/mixins";
+@import './utils/variables';
+@import './utils/visually-hidden';
+@import './utils/mixins';
 
-@import "./base/common";
-@import "./base/section";
-@import "./base/container";
+@import './base/common';
+@import './base/section';
+@import './base/container';
 
-@import "./components/logo";
-@import "./components/button";
-// @import "./components/modal";
+@import './components/logo';
+@import './components/button';
+@import './components/modal';
 
-@import "./layout/header-lib";
-@import "./layout/movies";
-@import "./layout/footer";
+@import './layout/header-lib';
+@import './layout/movies';
+@import './layout/footer';
