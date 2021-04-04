@@ -1,18 +1,29 @@
 import './sass/main.scss';
-import refs from './js/refs.js';
-import movieApi from './js/movie.js';
-import genresApi from './js/genres.js';
-import movieCardTpl from './templates/movieCard.hbs';
-import movieAdapter from './js/adapters.js';
+import MoviePagination from './js/movie-pagination.js';
 
-movieApi.fetchPopular().then(({ results }) => {
-  const movieDataList = results.map(item => movieAdapter(item));
-  const movieList = movieDataList.map(item => movieCardTpl(item)).join('');
+const movies = new MoviePagination('.movies__list');
 
-  refs.movieList.innerHTML = movieList;
-  // console.log(movieList);
-});
+const prevButtonRef = document.querySelector('.button--prev');
+const nextButtonRef = document.querySelector('.button--next');
 
-genresApi.fetchGenres().then(({ genres }) => {
-  console.log(genres);
-});
+prevButtonRef.addEventListener('click', movies.goToPrevPage);
+nextButtonRef.addEventListener('click', movies.goToNextPage);
+
+movies.mount();
+
+// import refs from './js/refs.js';
+// import movieApi from './js/movie.js';
+// import genresApi from './js/genres.js';
+// import movieCardTpl from './templates/movieCard.hbs';
+// import movieAdapter from './js/adapters.js';
+
+// movieApi.fetchPopular(5).then(({ results }) => {
+//   const movieDataList = results.map(item => movieAdapter(item));
+//   const movieList = movieDataList.map(item => movieCardTpl(item)).join('');
+
+//   refs.movieList.innerHTML = movieList;
+// });
+
+// genresApi.fetchGenres().then(({ genres }) => {
+//   console.log(genres);
+// });
