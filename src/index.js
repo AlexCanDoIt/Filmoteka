@@ -1,4 +1,5 @@
 import './sass/main.scss';
+import  './js/pagination.js';
 import MoviePagination from './js/movie-pagination.js';
 
 const movies = new MoviePagination('.movies__list');
