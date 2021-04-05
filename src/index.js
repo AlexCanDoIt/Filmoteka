@@ -27,3 +27,27 @@ movies.mount();
 // genresApi.fetchGenres().then(({ genres }) => {
 //   console.log(genres);
 // });
+
+// ===========================
+// import settings from './settings';
+// import movieCard from '../templates/movieCard.hbs';
+// const listRef = document.querySelector('.movies__list');
+// export default function searchMovie(name) {
+//   return fetch(`${settings.BASE_URL}/search/movie?api_key=${settings.API_KEY}&query=${name}`)
+//     .then(r => {
+//       return r.json();
+//     })
+//     .then(r => {
+//       listRef.innerHTML = ' ';
+//       const markup = movieCard(r.results);
+//       listRef.insertAdjacentHTML('afterbegin', markup);
+//     });
+// }
+
+// import searchMovie from './js/search-movie';
+// const searchRef = document.querySelector('.form__input');
+// searchRef, addEventListener('input', onSearch);
+// function onSearch(e) {
+//   const value = e.target.value;
+//   searchMovie(value);
+// }

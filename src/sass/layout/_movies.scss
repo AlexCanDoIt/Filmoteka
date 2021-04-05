@@ -21,7 +21,8 @@
 }
 ​
 .movies__img {
-  object-position: top;
+  max-width: 100%;
+  object-position: center;
   object-fit: cover;
 }
 ​

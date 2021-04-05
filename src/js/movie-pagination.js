@@ -80,6 +80,26 @@ class MoviePagination {
 
   render() {
     this.element.innerHTML = movieCardTpl(this.movies);
+    // let markup = [];
+    // this.movies.forEach(movie => {
+    //   markup += `
+    //   <li id="${movie.id}" class="movies__card">
+    //     <div class="movies__thumb">
+    //       <img class="img movies__img" src="${movie.imgSrc}" alt="Постер фильма">
+    //     </div>
+    //     <div class="movies__content">
+    //       <h2 class="movies__title">${movie.title}</h2>
+    //       <p class="movies__description">
+    //         ${movie.genre} | ${movie.releaseYear}
+    //         <span class="movies__rating">${movie.rating}</span>
+    //       </p>
+    //     </div>
+    //   </li>
+    //   `;
+    // });
+
+    // this.element.innerHTML = markup;
+    // console.log(markup);
   }
 }
 
