@@ -44,6 +44,7 @@
     cursor: pointer;
 }
   
+
   
 .pagination__button-left {  
     background-image: url(../images/sprite.svg#arrow-left);
@@ -72,4 +73,8 @@
     font-size: 12px;
     cursor: default;   
   }
+}
+
+.hidden {
+  display: none;
 }

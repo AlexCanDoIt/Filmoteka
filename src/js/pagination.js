@@ -1,35 +1,120 @@
 const element = document.querySelector(".pagination__list");
-window.totalPages = totalPages;
-let totalPages = 20;
+const prevBtnRef = document.querySelector(".pagination__button-left" );
+
+let totalPages = 9;
 let page = 1;
 
+createPagination(totalPages, page);
 window.createPagination = createPagination;
 element.innerHTML = createPagination(totalPages, page);
 function createPagination(totalPages, page){
+  
   let liTag = '';
   let active;
   let beforePage = page - 1;
   let afterPage = page + 1;
-  if(page > 1){
-    liTag += `<li class=list pagination__item"  onclick="createPagination(totalPages, ${page - 1})">
-   <button class="pagination__button-left arrow-btn" type="button" ></button>
+
+
+    
+
+  
+  if(page >= 1){
+    liTag += `<li class="prev pagination__item" onclick="createPagination(${totalPages}, ${page - 1})">
+    <button class="pagination__button-left arrow-btn " type="button" id="prev-btn" ></button>
     </li>`;
   } 
+  
 
-  if (page === 1){
-    liTag = `<li class="prev pagination__item">
-    <button class="pagination__button-left arrow-btn" type="button"></button>
-    <li>`    
-  }
-
+  if(totalPages >= 10){
   if(page > 3){ 
-    liTag += `<li class="first numb pagination__item" onclick="createPagination(totalPages, 1)"><span>1</span></li>`;
-    
+    liTag += `<li class="first numb pagination__item" onclick="createPagination(${totalPages}, 1)"><span>1</span></li>`;
+  }
     if(page >= 5){ 
       liTag += `<li class="pagination__item dots"><span>...</span></li>`;
     }
   }
 
+  if (totalPages<1) {
+    element.classList.add('hidden');     
+   } 
+   if (totalPages < 10){
+    if (document.documentElement.clientWidth >= 768){
+   if (page < 10) {
+      if(page === 1){
+        prevBtnRef.disabled = true;
+        afterPage = afterPage + 8;
+      }else  if(page === 2){
+        afterPage = afterPage + 7;
+      }else  if(page === 3){
+        afterPage = afterPage + 6;
+        beforePage = beforePage -2;
+      }else  if(page === 4){
+        afterPage = afterPage + 5;
+        beforePage = beforePage -2;
+      }else  if(page === 5){
+        afterPage = afterPage + 4;
+        beforePage = beforePage -3;
+      }else  if(page === 6){
+        afterPage = afterPage + 3;
+        beforePage = beforePage -4;
+      }else  if(page === 7){
+        afterPage = afterPage + 2;
+        beforePage = beforePage -5;
+      }else  if(page === 8){
+        afterPage = afterPage + 1;
+        beforePage = beforePage -6;
+      }else  if(page === 9){
+        afterPage = afterPage;
+        beforePage = beforePage -7;
+      }
+   }
+  }
+   if (document.documentElement.clientWidth < 768){
+    if (page === 1) {
+      prevBtnRef.disabled = true;
+      afterPage = afterPage + 3;
+      beforePage = beforePage +1;
+    } else if (page === 2) {
+      afterPage  = afterPage + 2;
+    } else if(totalPages === 3){
+      afterPage  = afterPage + 2;
+      beforePage = beforePage -2;
+    }else if(totalPages === 4){
+      afterPage  = afterPage + 2;
+      beforePage = beforePage -2;
+    }else if(totalPages === 5){
+      afterPage  = afterPage + 1;
+      beforePage = beforePage -1;
+    }else if(totalPages === 6){
+      afterPage  = afterPage + 1;
+      beforePage = beforePage -1;
+    }else if(totalPages === 7){
+      afterPage  = afterPage + 1;
+      beforePage = beforePage -1;
+    }else if(totalPages === 8){
+      afterPage  = afterPage + 1;
+      beforePage = beforePage -1;
+    }else if(totalPages === 9){
+      afterPage  = afterPage + 1;
+      beforePage = beforePage -1;
+    }    
+      
+    else if (page > 1) {
+      beforePage = beforePage - 1;
+    } 
+   }
+   if(totalPages>3){
+    if (page == totalPages) {
+      beforePage = beforePage - 2;    
+    }  else if (page === totalPages - 1) {
+      beforePage = beforePage - 1;
+    }
+   }
+  
+ };
+  
+
+  if (totalPages >= 10){
   if (document.documentElement.clientWidth >= 768){
     if (page == totalPages) {
       beforePage = beforePage - 5;    
@@ -37,24 +122,32 @@ function createPagination(totalPages, page){
       beforePage = beforePage - 4;
     } else if (page === totalPages - 2) {
       beforePage = beforePage - 3;
+      afterPage = afterPage+2;
     } else if (page === totalPages - 3) {
       beforePage = beforePage - 2;
+      afterPage = afterPage+2;
+    }else if (page === totalPages - 4) {
+      beforePage = beforePage - 1;
+      afterPage = afterPage+2;
     } else if (page > 1) {
       beforePage = beforePage - 1;
     } 
-  }if (document.documentElement.clientWidth < 768){
+  }
+    if (document.documentElement.clientWidth < 768){
     if (page == totalPages) {
       beforePage = beforePage - 3;    
-    } else if (page === totalPages - 1) {
+    }  else if (page === totalPages - 1) {
       beforePage = beforePage - 2;
     }  else if (page > 1) {
       beforePage = beforePage - 1;
-    }
+    } 
   }
     
   if (document.documentElement.clientWidth >= 768){
     if (page === 1) {
       afterPage = afterPage + 5;
+    } else if (page < 1) {
+      return;
     } else if (page === 2) {
       afterPage  = afterPage + 4;
     } else if (page === 3) {
@@ -63,7 +156,7 @@ function createPagination(totalPages, page){
       afterPage  = afterPage + 2;
     } else if (page) {
       afterPage  = afterPage + 1;
-    } 
+    }
   }if (document.documentElement.clientWidth < 768){
     if (page === 1) {
       afterPage = afterPage + 3;
@@ -72,7 +165,7 @@ function createPagination(totalPages, page){
     }  else if (page) {
       afterPage  = afterPage + 1;
     }
-  }
+  }}
 
 
   for (let plength = beforePage; plength <= afterPage; plength++) {
@@ -87,21 +180,24 @@ function createPagination(totalPages, page){
     }else{ 
       active = "";
     }
-    liTag += `<li class="numb ${active} pagination__item" onclick="createPagination(totalPages, ${plength})"><span>${plength}</span></li>`;
+    liTag += `<li class="numb ${active} pagination__item" onclick="createPagination(${totalPages}, ${plength})"><span>${plength}</span></li>`;
  
   }
-
-  if(page > 0 ){  
-      liTag += `<li class="dots pagination__item"><span>...</span></li>`;
-      liTag += `<li class="last numb pagination__item" onclick="createPagination(totalPages, ${totalPages=999})"><span>${totalPages=999}</span></li>`;
-  }
- 
-if (page < 999) { 
-    liTag += `<li class="pagination__item" onclick="createPagination(totalPages, ${page + 1})">
+  if(totalPages >= 10){
+  
+      if ( page < totalPages - 4){
+        liTag += `<li class="dots pagination__item"><span>...</span></li>`;
+        liTag += `<li class="last numb pagination__item" onclick="createPagination(${totalPages}, ${totalPages})"><span>${totalPages}</span></li>`;
+    
+      }}
+    
+   if (page < totalPages) { 
+    liTag += `<li class="pagination__item" onclick="createPagination(${totalPages}, ${page + 1})">
     <button class="pagination__button-right arrow-btn" type="button"></button></li>`;
   }
-  
-  if (page === totalPages) { liTag += `<li class="next pagination__item" >
+ 
+  if (page === totalPages) { 
+    liTag += `<li class="next pagination__item" >
   <button class="pagination__button-right arrow-btn" type="button"></button></li>`;
   }
   element.innerHTML = liTag; //add li tag inside ul tag
