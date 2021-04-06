@@ -1,5 +1,6 @@
 import './sass/main.scss';
 import refs from './js/refs.js';
+import movieApi from './js/movie.js';
 import MoviePagination from './js/movie-pagination.js';
 const debounce = require('lodash.debounce');
 
@@ -12,6 +13,11 @@ nextButtonRef.addEventListener('click', movies.goToNextPage);
 
 movies.mount();
 
+refs.input.addEventListener('input', debounce(onSearch, 1000));
+
+function onSearch(e) {
+  movieApi.fetchByKeyword(1, e.target.value).then(console.log);
+}
 // import g from './js/genres';
 // g.fetchGenres().then(console.log);
 // g.getGenreById(['28', '12', '878', '10751']);
