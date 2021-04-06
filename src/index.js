@@ -1,6 +1,7 @@
 import './sass/main.scss';
 import refs from './js/refs.js';
 import MoviePagination from './js/movie-pagination.js';
+import genresApi from './js/genres.js';
 const debounce = require('lodash.debounce');
 
 const movies = new MoviePagination('.movies__list');
@@ -19,34 +20,20 @@ movies.mount();
 /*
  * Названия жанров
  */
+var genreIds = ['28', '12', '878', '10751'];
 
-// import './sass/main.scss';
-// import refs from './js/refs.js';
-// import genresApi from './js/genres.js';
-
-// // ======================================================================================
-// // Функция, которая получает массив id-жанров, а на выходе выдаёт строку названий жанров:
-// // Массив с ID жанров (для примера)
-// var genreIds = ['28', '12', '878', '10751'];
-// ​
-// genresApi.fetchGenres().then(({ genres }) => {
-//   // Создаем пустой массив в который будем записывать названия жанров, которые сопоставлены с ID
-//   let genreNames = [];
-// ​
-//   // Сопоставляем названия жанров с ID в цикле
-//   genreIds.map((name) => {
-//   // Ищем
-//   const genre = genres.find(item => item.id === parseInt(name));
-//   // Записываем названия жанров в новый массив
-//   genreNames.push(genre.name);
-//   });
-// ​
-//   // Преобразовываем массив в строку с разделителем запятая
-//   var genreNamesToString;
-//   genreNamesToString = genreNames.join(', ');
-//   // Выводим в консоль жанры через запятую
-//   console.log(genreNamesToString);
-// });
+genresApi.fetchGenres().then(({ genres }) => {
+    let genreNames = [];
+    
+    genreIds.map((name) => {
+        const genre = genres.find(item => item.id === parseInt(name));
+        genreNames.push(genre.name);
+    });
+    
+    var genreNamesToString;
+    genreNamesToString = genreNames.join(', ');
+    console.log(genreNamesToString);
+});
 
 /*
  * Поиск по ключевому слову
