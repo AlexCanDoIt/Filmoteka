@@ -3,6 +3,7 @@ import refs from './js/refs.js';
 import movieApi from './js/movie.js';
 import MoviePagination from './js/movie-pagination.js';
 const debounce = require('lodash.debounce');
+import  './js/pagination.js';
 
 const movies = new MoviePagination('.movies__list');
 
