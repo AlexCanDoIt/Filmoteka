@@ -8,6 +8,12 @@ const api = {
 
     return fetch(url).then(rawData => rawData.json());
   },
+
+  fetchByKeyword(page = '', keyword) {
+    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&page=${page}&query=${keyword}`;
+
+    return fetch(url).then(rawData => rawData.json());
+  },
 };
 
 export default api;
