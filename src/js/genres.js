@@ -6,10 +6,6 @@ const genres = {
   fetchGenres() {
     return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}`).then(rawData => rawData.json());
   },
-
-  // getGenreById(arrId) {
-  //   return 'stringID';
-  // },
 };
 
 export default genres;
