@@ -11,13 +11,27 @@ const nextButtonRef = document.querySelector('.button--next');
 prevButtonRef.addEventListener('click', movies.goToPrevPage);
 nextButtonRef.addEventListener('click', movies.goToNextPage);
 
+refs.input.addEventListener(
+  'input',
+  debounce(e => {
+    movies.keyword(e.target.value);
+  }, 1000),
+);
+
 movies.mount();
 
-refs.input.addEventListener('input', debounce(onSearch, 1000));
+// movieApi.fetchByKeyword(1, 'hello').then(({ results }) => {
+//   console.log(results);
+// });
 
-function onSearch(e) {
-  movieApi.fetchByKeyword(1, e.target.value).then(console.log);
-}
+// refs.input.addEventListener(
+//   'input',
+//   debounce(e => {
+//     movies.keyword(e.target.value);
+//     movies.mountByKeyword();
+//   }, 1000),
+// );
+
 // import g from './js/genres';
 // g.fetchGenres().then(console.log);
 // g.getGenreById(['28', '12', '878', '10751']);

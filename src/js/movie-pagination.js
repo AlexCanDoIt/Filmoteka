@@ -15,6 +15,14 @@ class MoviePagination {
     this.loadMore = this.loadMore.bind(this);
   }
 
+  get keyword() {
+    return this.keyword;
+  }
+
+  set keyword(word) {
+    this.keyword = keyword;
+  }
+
   get movies() {
     return this.#movies;
   }
