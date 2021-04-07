@@ -1,3 +1,4 @@
+/* ========== Pagination ========== */
 .pagination__list{  
   display: flex;
   width: 100%;
@@ -11,7 +12,7 @@
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;  
-  color: #000000;
+  color: $text-white-theme-color;
   cursor: pointer;
   transition: all 0.3s ease;    
 }
@@ -24,36 +25,35 @@
     display: none;      
 }
 
-.pagination__item.active,
-.pagination__item.numb:hover,
-.next:hover,
-.prev:hover  {
-    color: #fff;
-    background: #FF6B08;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
 .arrow-btn {  
     height: 40px;
     width: 40px;
-    line-height: 40px;
     border: 0;
     border-radius: 5px;
     background: #F7F7F7;    
     border-radius: 5px;
     cursor: pointer;
 }
-  
 
-  
-.pagination__button-left {  
-    background-image: url(../images/sprite.svg#arrow-left);
+.arrow-btn:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.pagination__item.active,
+.pagination__item.numb:hover {
+    color: $text-dark-theme-color;
+    background: $accent-color;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.pagination__button-left {
+    background-image: url(../images/arrow-left.svg);
     background-repeat: no-repeat;
     background-position: center;
 }  
-  
+
 .pagination__button-right {  
-    background-image: url(../images/sprite.svg#arrow-right);
+    background-image: url(../images/arrow-right.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -78,3 +78,5 @@
 .hidden {
   display: none;
 }
+
+/* ========== End Pagination ========== */
