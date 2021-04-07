@@ -2,6 +2,10 @@ import movieCardTpl from '../templates/movieCard.hbs';
 import movieApi from './movie';
 import { generatePosterPath } from './helpers';
 
+import modal from './modal'
+
+
+
 class MoviePagination {
   #movies = [];
 
@@ -80,6 +84,8 @@ class MoviePagination {
 
   render() {
     this.element.innerHTML = movieCardTpl(this.movies);
+    modal.modalOpen();
+   
   }
 }
 
