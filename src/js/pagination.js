@@ -71,7 +71,6 @@ function createPagination(totalPages, page){
   }
    if (document.documentElement.clientWidth < 768){
     if (page === 1) {
-      prevBtnRef.disabled = true;
       afterPage = afterPage + 3;
       beforePage = beforePage +1;
     } else if (page === 2) {
