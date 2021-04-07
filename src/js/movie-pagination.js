@@ -1,6 +1,6 @@
 import movieCardTpl from '../templates/movieCard.hbs';
 import movieApi from './movie';
-import { generatePosterPath } from './helpers';
+import { generatePosterPath, convertGenre } from './helpers';
 
 class MoviePagination {
   #movies = [];
@@ -13,14 +13,7 @@ class MoviePagination {
     this.goToPrevPage = this.goToPrevPage.bind(this);
     this.goToNextPage = this.goToNextPage.bind(this);
     this.loadMore = this.loadMore.bind(this);
-  }
-
-  get keyword() {
-    return this.keyword;
-  }
-
-  set keyword(word) {
-    this.keyword = keyword;
+    this.keyword = '';
   }
 
   get movies() {
@@ -74,9 +67,17 @@ class MoviePagination {
   }
 
   fetchMovies() {
-    return movieApi
-      .fetchPopular(this.currentPage)
-      .then(({ results, total_pages }) => ({ results, total_pages }));
+    if (!this.keyword) {
+      return movieApi
+        .fetchPopular(this.currentPage)
+        .then(({ results, total_pages }) => ({ results, total_pages }));
+    }
+
+    if (this.keyword) {
+      return movieApi
+        .fetchByKeyword(this.currentPage, this.keyword)
+        .then(({ results, total_pages }) => ({ results, total_pages }));
+    }
   }
 
   mount() {
@@ -106,8 +107,8 @@ const movieAdapter = ({
   id: id,
   imgSrc: generatePosterPath(poster_path),
   title: title,
-  genre: genre_ids,
-  releaseYear: release_date,
+  genre: convertGenre(genre_ids),
+  releaseYear: release_date.slice(0, 4),
   rating: vote_avarage,
 });
 
