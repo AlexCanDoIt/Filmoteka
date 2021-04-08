@@ -4,6 +4,7 @@ import movieApi from './js/movie.js';
 import MoviePagination from './js/movie-pagination.js';
 const debounce = require('lodash.debounce');
 import  './js/pagination.js';
+import addMovieToList from './js/localstorage';
 
 const movies = new MoviePagination('.movies__list');
 
@@ -24,3 +25,7 @@ refs.input.addEventListener(
     if (movies.keyword) movies.mount();
   }, 1000),
 );
+
+// Функтонал кнопок add в модальном окне
+refs.modal.addEventListener('click', addMovieToList);
+
