@@ -1,6 +1,7 @@
 import './sass/main.scss';
 import refs from './js/refs.js';
 import movieApi from './js/movie.js';
+import footerModal from './js/footer-modal.js'
 import MoviePagination from './js/movie-pagination.js';
 const debounce = require('lodash.debounce');
 
