@@ -12,8 +12,6 @@ class MoviePagination {
     this.#movies = [];
     this.currentPage = 1;
     this.totalPages = 0;
-    // this.goToPrevPage = this.goToPrevPage.bind(this);
-    // this.goToNextPage = this.goToNextPage.bind(this);
     this.loadMore = this.loadMore.bind(this);
     this.keyword = '';
   }
@@ -38,28 +36,6 @@ class MoviePagination {
       this.movies = this.convertMoviesData(results);
     });
   }
-
-  // goToPrevPage() {
-  //   if (this.currentPage === 1) {
-  //     return;
-  //   }
-
-  //   this.currentPage -= 1;
-  //   this.fetchMovies().then(({ results }) => {
-  //     this.movies = this.convertMoviesData(results);
-  //   });
-  // }
-
-  // goToNextPage() {
-  //   if (this.currentPage === this.totalPages) {
-  //     return;
-  //   }
-
-  //   this.currentPage += 1;
-  //   this.fetchMovies().then(({ results }) => {
-  //     this.movies = this.convertMoviesData(results);
-  //   });
-  // }
 
   loadMore() {
     this.currentPage += 1;

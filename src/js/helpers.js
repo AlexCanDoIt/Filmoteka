@@ -14,3 +14,24 @@ export const convertGenre = ids => {
 
   return genreNames.join(', ');
 };
+
+export const parseLocalStorage = {
+  queueKey: 'queueMovies',
+  watchedKey: 'watchedMovies',
+
+  get queueArray() {
+    return JSON.parse(localStorage.getItem(this.queueKey));
+  },
+
+  get watchedArray() {
+    return JSON.parse(localStorage.getItem(this.watchedKey));
+  },
+};
+
+// export const setItemLS = (key, value) => {
+//   localStorage.setItem(key, JSON.stringify(value));
+// };
+
+// export const getItemLS = key => {
+//   return JSON.parse(localStorage.getItem(key));
+// };

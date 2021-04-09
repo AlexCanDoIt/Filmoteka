@@ -1,7 +1,7 @@
 import modalCard from '../templates/modal.hbs';
 import settings from './settings';
+import refs from './refs';
 const { BASE_URL, API_KEY } = settings;
-const mainRef = document.querySelector('main');
 
 const modal = {
   modalOpen() {
@@ -13,10 +13,10 @@ const modal = {
 
   open(e) {
     const idFilm = e.currentTarget.id;
-    console.log(idFilm);
+
     fetchFilm().then(r => {
       const markup = modalCard(r);
-      mainRef.insertAdjacentHTML('afterbegin', markup);
+      refs.modal.innerHTML = markup;
       modalClose();
     });
 
