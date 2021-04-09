@@ -42,8 +42,11 @@ function modalClose() {
     }
   }
   backdropRef.addEventListener('click', closeModalBack);
-  function closeModalBack() {
-    backdropRef.classList.add('visually-hidden');
+  function closeModalBack(e) {
+    if (e.target.classList.value === 'backdrop') {
+      backdropRef.classList.add('visually-hidden');
+    }
+    return;
   }
 }
 
