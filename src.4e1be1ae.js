@@ -30,4 +30,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{"./refs.js":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=u(require("./js/refs.js")),r=u(require("./js/movie.js")),t=u(require("./js/movie-pagination.js")),n=u(require("./js/localstorage.js"));function u(e){return e&&e.__esModule?e:{default:e}}var i=require("lodash.debounce"),a=new t.default(".movies__list");function o(){a.currentPage=Number(document.querySelector(".active").innerText),a.goToPage()}a.keyword||a.mount(),e.default.input.addEventListener("input",i(function(e){var r=e.target.value;a.currentPage=1,a.keyword=r,a.keyword||a.mount(),a.keyword&&a.mount()},1e3)),e.default.pagination.addEventListener("click",o);
 },{"./sass/main.scss":"clu1","./js/refs.js":"VyiV","./js/movie.js":"wUyM","./js/movie-pagination.js":"UyPo","lodash.debounce":"PZFh","./js/localstorage.js":"MoVy"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-team-project/src.f3f749b9.js.map
+//# sourceMappingURL=/goit-js-team-project/src.4e1be1ae.js.map
