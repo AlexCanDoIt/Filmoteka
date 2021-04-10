@@ -34,4 +34,14 @@
     line-height: 1.188em;
  }
 }
+
+.footer__students {
+  text-decoration: none;
+  color: gray;
+}
+
+.footer__students:hover {
+  text-decoration: underline;
+  color: orange;
+}
 /* ========== End Footer ========== */
