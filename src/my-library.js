@@ -1,12 +1,16 @@
 import './sass/my-library.scss';
+import refs from './js/refs.js';
+import movieApi from './js/movie.js';
 import MoviePagination from './js/movie-pagination.js';
+import addMovieToList from './js/localstorage.js';
+import settings from './js/settings';
+const { BASE_URL, API_KEY } = settings;
 
 const movies = new MoviePagination('.movies__list');
 
-const prevButtonRef = document.querySelector('.button--prev');
-const nextButtonRef = document.querySelector('.button--next');
+refs.btnW.addEventListener('click', handleBtnW);
 
-prevButtonRef.addEventListener('click', movies.goToPrevPage);
-nextButtonRef.addEventListener('click', movies.goToNextPage);
-
-movies.mount();
+function handleBtnW() {
+  const watchedIds = JSON.parse(localStorage.getItem('watched'));
+  // const queueIds = JSON.parse(localStorage.getItem('queue'));
+}

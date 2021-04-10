@@ -1,108 +1,11 @@
-import movieCardTpl from '../templates/movieCard.hbs';
-import movieApi from './movie';
-import { generatePosterPath, convertGenre } from './helpers';
-import modal from './modal';
 import refs from './refs';
 
-class MoviePagination {
-  #movies = [];
+let totalPages = 20;
+let page = 1;
 
-  constructor(selector) {
-    this.element = document.querySelector(selector);
-    this.#movies = [];
-    this.currentPage = 1;
-    this.totalPages = 0;
-    this.loadMore = this.loadMore.bind(this);
-    this.keyword = '';
-  }
-
-  get movies() {
-    return this.#movies;
-  }
-
-  set movies(movieList) {
-    if (!movieList) {
-      console.error('Где список фильмов?');
-    }
-
-    this.#movies = movieList;
-    this.render();
-  }
-
-  goToPage() {
-    this.currentPage = Number(document.querySelector('.active').innerText);
-
-    this.fetchMovies().then(({ results }) => {
-      this.movies = this.convertMoviesData(results);
-    });
-  }
-
-  loadMore() {
-    this.currentPage += 1;
-    return this.fetchMovies().then(({ results }) => {
-      this.addMovies(this.convertMoviesData(results));
-    });
-  }
-
-  addMovies(newMovies) {
-    this.movies = [...this.movies, ...newMovies];
-  }
-
-  convertMoviesData(movieList) {
-    return movieList.map(movie => movieAdapter(movie));
-  }
-
-  fetchMovies() {
-    if (!this.keyword) {
-      return movieApi
-        .fetchPopular(this.currentPage)
-        .then(({ results, total_pages }) => ({ results, total_pages }));
-    }
-
-    if (this.keyword) {
-      return movieApi
-        .fetchByKeyword(this.currentPage, this.keyword)
-        .then(({ results, total_pages }) => ({ results, total_pages }));
-    }
-  }
-
-  mount() {
-    this.fetchMovies().then(({ results, total_pages }) => {
-      this.movies = this.convertMoviesData(results);
-      this.totalPages = total_pages;
-      createPagination(this.totalPages, this.currentPage);
-      window.createPagination = createPagination;
-      refs.pagination.innerHTML = createPagination(this.totalPages, this.currentPage);
-    });
-  }
-
-  render() {
-    this.element.innerHTML = movieCardTpl(this.movies);
-    modal.modalOpen();
-  }
-}
-
-const movieAdapter = ({
-  id,
-  poster_path,
-  genre_ids,
-  original_title,
-  overview,
-  popularity,
-  release_date,
-  title,
-  vote_avarage,
-  vote_count,
-}) => ({
-  id: id,
-  imgSrc: generatePosterPath(poster_path),
-  title: title,
-  genre: convertGenre(genre_ids),
-  releaseYear: release_date.slice(0, 4),
-  rating: vote_avarage,
-});
-
-export default MoviePagination;
+createPagination(totalPages, page);
+window.createPagination = createPagination;
+refs.pagination.innerHTML = createPagination(totalPages, page);
 
 function createPagination(totalPages, page) {
   let liTag = '';
