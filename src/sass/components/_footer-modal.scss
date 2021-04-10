@@ -1,4 +1,4 @@
-.backdrop {
+.footer-backdrop {
     z-index: 1;
     position: fixed;
     top: 0;
@@ -21,7 +21,7 @@
     transform: scale(0.9) translate(-50%, -50%);
   }
 
-  .modal {
+  .footer-modal {
       position: absolute;
       display: block;
     background-color: #fff;
