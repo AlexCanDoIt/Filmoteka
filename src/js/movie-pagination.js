@@ -54,12 +54,16 @@ class MoviePagination {
 
   fetchMovies() {
     if (!this.keyword) {
+          refs.spinner.classList.remove('visually-hidden');
+    refs.movieList.classList.add('visually-hidden');
       return movieApi
         .fetchPopular(this.currentPage)
         .then(({ results, total_pages }) => ({ results, total_pages }));
     }
 
     if (this.keyword) {
+          refs.spinner.classList.remove('visually-hidden');
+    refs.movieList.classList.add('visually-hidden');
       return movieApi
         .fetchByKeyword(this.currentPage, this.keyword)
         .then(({ results, total_pages }) => ({ results, total_pages }));
@@ -77,6 +81,8 @@ class MoviePagination {
   }
 
   render() {
+    refs.spinner.classList.add('visually-hidden');
+    refs.movieList.classList.remove('visually-hidden');
     this.element.innerHTML = movieCardTpl(this.movies);
     modal.modalOpen();
   }
