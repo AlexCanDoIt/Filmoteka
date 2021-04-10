@@ -1,47 +1,53 @@
-// import modalCard from './templates/modal.hbs';
+import modalCard from '../templates/modal.hbs';
+import settings from './settings';
+import refs from './refs';
+const { BASE_URL, API_KEY } = settings;
 
-// const mainRef = document.querySelector('main');
+const modal = {
+  modalOpen() {
+    const listCard = document.querySelectorAll('.movies__card');
+    listCard.forEach(e => {
+      e.addEventListener('click', this.open);
+    });
+  },
 
-// const BASE_URL = 'https://api.themoviedb.org/3/movie';
-// const apiKey = 'ade6c0d166c517e1fe622025fc12c476';
-// let idFilm;
+  open(e) {
+    const idFilm = e.currentTarget.id;
 
-// export default function modal() {
-//   const listCard = document.querySelectorAll('#list-card');
-//   listCard.forEach(e => {
-//     e.addEventListener('click', modalOpen);
-//   });
+    fetchFilm().then(r => {
+      const markup = modalCard(r);
+      refs.modal.innerHTML = markup;
+      modalClose();
+    });
 
-//   function modalOpen(e) {
-//     idFilm = e.currentTarget.dataset.id;
-//     fetchFilm().then(r => {
-//       const markup = modalCard(r);
-//       mainRef.insertAdjacentHTML('afterbegin', markup);
-//     });
-//   }
-// }
+    function fetchFilm() {
+      return fetch(`${BASE_URL}/movie/${idFilm}?api_key=${API_KEY}`).then(r => {
+        return r.json();
+      });
+    }
+  },
+};
 
-// function fetchFilm() {
-//   return fetch(`${BASE_URL}/${idFilm}?api_key=${apiKey}`).then(r => {
-//     return r.json();
-//   });
-// }
+function modalClose() {
+  const closeIcon = document.querySelector('.modal__close-icon');
+  const backdropRef = document.querySelector('.backdrop');
+  closeIcon.addEventListener('click', close);
+  function close() {
+    backdropRef.classList.add('visually-hidden');
+  }
+  window.addEventListener('keydown', closeModalKey);
+  function closeModalKey(event) {
+    if (event.code === 'Escape') {
+      backdropRef.classList.add('visually-hidden');
+    }
+  }
+  backdropRef.addEventListener('click', closeModalBack);
+  function closeModalBack(e) {
+    if (e.target.classList.value === 'backdrop') {
+      backdropRef.classList.add('visually-hidden');
+    }
+    return;
+  }
+}
 
-// export default function closeModal() {
-//   const modalClose = document.querySelector('.modal__close-btn');
-//   const backdropRef = document.querySelector('.backdrop');
-//   modalClose.addEventListener('click', closeModal);
-//   function closeModal() {
-//     backdropRef.classList.add('visually-hidden');
-//   }
-//   window.addEventListener('keydown', closeModalKey);
-//   function closeModalKey(event) {
-//     if (event.code === 'Escape') {
-//       backdropRef.classList.add('visually-hidden');
-//     }
-//   }
-//   backdropRef.addEventListener('click', closeModalBack);
-//   function closeModalBack() {
-//     backdropRef.classList.add('visually-hidden');
-//   }
-// }
+export default modal;
