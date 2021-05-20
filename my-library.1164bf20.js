@@ -27,4 +27,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./refs.js":"VyiV"}],"bcKP":[function(require,module,exports) {
 "use strict";require("./sass/my-library.scss");var e=a(require("./js/refs.js")),s=a(require("./js/movie.js")),r=a(require("./js/movie-pagination.js")),t=a(require("./js/localstorage.js")),i=a(require("./js/settings"));function a(e){return e&&e.__esModule?e:{default:e}}var u=i.default.BASE_URL,l=i.default.API_KEY,n=new r.default(".movies__list");function o(){JSON.parse(localStorage.getItem("watched"))}e.default.btnW.addEventListener("click",o);
 },{"./sass/my-library.scss":"xyDj","./js/refs.js":"VyiV","./js/movie.js":"wUyM","./js/movie-pagination.js":"UyPo","./js/localstorage.js":"MoVy","./js/settings":"HxdU"}]},{},["bcKP"], null)
-//# sourceMappingURL=/goit-js-team-project/my-library.631687a5.js.map
+//# sourceMappingURL=/Filmoteka/my-library.1164bf20.js.map
